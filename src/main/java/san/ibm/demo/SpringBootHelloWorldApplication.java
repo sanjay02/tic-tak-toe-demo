@@ -19,7 +19,7 @@ public class SpringBootHelloWorldApplication  extends SpringBootServletInitializ
 		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
 		
 		TicTakToeRequestService service=new TicTakToeRequestService();
-		//service.process();
+		service.process();
 	}
 	
 	
