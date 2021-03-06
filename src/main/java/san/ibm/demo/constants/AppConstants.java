@@ -1,5 +1,7 @@
 package san.ibm.demo.constants;
 
+import java.util.ArrayList;
+
 /*This class contains static final strings to be used in application*/
 public class AppConstants {
 	
@@ -16,6 +18,17 @@ public class AppConstants {
 	public static String OOO="OOO";
 	public static String X="X";
 	public static String O="O";
+	
+	public static ArrayList<Integer> playerPosition = new ArrayList<Integer>();
+	public static ArrayList<Integer> cpuPosition = new ArrayList<Integer>();
+
+	public static char[][] gameBord = { { ' ', '|', ' ', '|', ' ' }, { '-', '+', '-', '+', '-' }, { ' ', '|', ' ', '|', ' ' },
+			{ '-', '+', '-', '+', '-' }, { ' ', '|', ' ', '|', ' ' } };
+
+	public enum AppConstant {
+		player,cpu
+
+	}
 
 }
 

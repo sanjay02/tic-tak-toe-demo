@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+import san.ibm.demo.handler.HandlerTicTakToe;
 import san.ibm.demo.service.TicTakToeRequestService;
+
 
 @SpringBootApplication
 public class SpringBootHelloWorldApplication  extends SpringBootServletInitializer {
@@ -19,7 +21,9 @@ public class SpringBootHelloWorldApplication  extends SpringBootServletInitializ
 		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
 		
 		TicTakToeRequestService service=new TicTakToeRequestService();
-		service.process();
+		//service.process();
+		HandlerTicTakToe handler=new HandlerTicTakToe();
+		handler.processRequest();
 	}
 	
 	
