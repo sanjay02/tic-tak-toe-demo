@@ -14,10 +14,10 @@ public class HelperTicTakToe {
 
 	public static void placePiece(char[][] gameBord, int pos, String user) {
 		char symbol = ' ';
-		if (user.equals(AppConstants.AppConstant.player)) {
+		if (user.equals("player")) {
 			symbol = 'X';
 			playerPosition.add(pos);
-		} else if (user.equals(AppConstants.AppConstant.cpu)) {
+		} else if (user.equals("cpu")) {
 			symbol = '0';
 			cpuPosition.add(pos);
 		}
