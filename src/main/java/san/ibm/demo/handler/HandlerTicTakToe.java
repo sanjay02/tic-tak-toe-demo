@@ -3,15 +3,19 @@ package san.ibm.demo.handler;
 import java.util.Random;
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import san.ibm.demo.constants.AppConstants;
 import san.ibm.demo.helper.HelperTicTakToe;
+import san.ibm.demo.scheduler.TicTakToeScheduler;
 
 import static san.ibm.demo.constants.AppConstants.*;
 @Component
 public class HandlerTicTakToe {
+	Logger log = LoggerFactory.getLogger(HandlerTicTakToe.class);
 
 	@Autowired
 	HelperTicTakToe helper;
@@ -38,19 +42,16 @@ public class HandlerTicTakToe {
 				Random rand = new Random();
 				int cpuPos = rand.nextInt(9) + 1;
 				while (playerPosition.contains(cpuPos) || cpuPosition.contains(cpuPos)) {
-					// System.out.println("Position taken! Enter a correct position");
 					cpuPos = rand.nextInt(9) + 1;
 				}
 
 				helper.placePiece(gameBord, cpuPos, "cpu");
 				helper.printGameBord(gameBord);
 
-				if (winnerResult())
-
-					break;
+				if (winnerResult())	break;
 			}
 		} catch (Exception e) {
-			System.out.println("Exception occur during procesDraw():"+e);
+			log.info("Exception occur during procesDraw():"+e);
 		}
 	}
 

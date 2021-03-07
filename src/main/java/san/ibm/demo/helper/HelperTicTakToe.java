@@ -6,6 +6,10 @@ import san.ibm.demo.constants.AppConstants;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+
 
 import static san.ibm.demo.constants.AppConstants.*;
 
@@ -77,12 +81,11 @@ public class HelperTicTakToe {
 		winning.add(rightCol);
 		winning.add(cross1);
 		winning.add(cross2);
-
 		for (List l : winning) {
 			if (playerPosition.containsAll(l)) {
-				response="Congratutions you won";
+				response="– Player X won";
 			} else if (cpuPosition.containsAll(l)) {
-				response= "CPU wins : Sorry:(";
+				response= "– Player O won";
 			} else if (playerPosition.size() + cpuPosition.size() == 9) {
 				response= GAME_ENDS_WITH_A_DRAW;
 			}
