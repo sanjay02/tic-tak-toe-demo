@@ -57,6 +57,7 @@ public class HelperTicTakToe {
 	}
 
 	public static String checkWinner() {
+		String response="";
 		List topRow = Arrays.asList(1, 2, 3);
 		List midRow = Arrays.asList(4, 5, 6);
 		List botRow = Arrays.asList(7, 8, 9);
@@ -79,14 +80,14 @@ public class HelperTicTakToe {
 
 		for (List l : winning) {
 			if (playerPosition.containsAll(l)) {
-				return "Congratutions you won";
+				response="Congratutions you won";
 			} else if (cpuPosition.containsAll(l)) {
-				return "CPU wins : Sorry:(";
+				response= "CPU wins : Sorry:(";
 			} else if (playerPosition.size() + cpuPosition.size() == 9) {
-				return GAME_ENDS_WITH_A_DRAW;
+				response= GAME_ENDS_WITH_A_DRAW;
 			}
 		}
-		return "";
+		return response;
 	}
 
 

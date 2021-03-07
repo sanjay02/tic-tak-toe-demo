@@ -16,8 +16,8 @@ public class HandlerTicTakToe {
 	@Autowired
 	HelperTicTakToe helper;
 	
-	public void processRequest() {
-			try {
+	public void processTicTakToeGame() {
+		try {
 			char[][] gameBord = AppConstants.gameBord;
 			helper.printGameBord(gameBord);
 
@@ -45,7 +45,9 @@ public class HandlerTicTakToe {
 				helper.placePiece(gameBord, cpuPos, "cpu");
 				helper.printGameBord(gameBord);
 
-				if (winnerResult()) break;
+				if (winnerResult())
+
+					break;
 			}
 		} catch (Exception e) {
 			System.out.println("Exception occur during procesDraw():"+e);
@@ -54,10 +56,10 @@ public class HandlerTicTakToe {
 
 
 	private boolean winnerResult() {
-		String result;
-		result = helper.checkWinner();
+		String result = helper.checkWinner();
 		if (result.length() > 0) {
 			System.out.println(result);
+			helper.printGameBord(gameBord);
 			return true;
 		}
 		return false;

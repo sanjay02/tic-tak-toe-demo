@@ -1,4 +1,4 @@
-package san.ibm.demo.service;
+package san.ibm.demo.handler;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,15 +8,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class TicTakToeRequestServiceTest {
+public class TicTakToeTest {
 
-	@Autowired
-	TicTakToeRequestService service;
-	
-	@Test
-	public void processTest() {
-		service.process();
-	}
+    @Autowired
+    private HandlerTicTakToe handler;
+
+    @Test
+    public void processTicTakToeGameTest(){
+        handler.processTicTakToeGame();
+    }
+
+
 	
 	
 	

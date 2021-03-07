@@ -6,11 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+import org.springframework.scheduling.annotation.EnableScheduling;
 import san.ibm.demo.handler.HandlerTicTakToe;
-import san.ibm.demo.service.TicTakToeRequestService;
 
 
 @SpringBootApplication
+@EnableScheduling
 public class SpringBootHelloWorldApplication  extends SpringBootServletInitializer {
 	
 	@Override
@@ -19,12 +20,7 @@ public class SpringBootHelloWorldApplication  extends SpringBootServletInitializ
     }
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
-		
-		TicTakToeRequestService service=new TicTakToeRequestService();
-		//service.process();
-		HandlerTicTakToe handler=new HandlerTicTakToe();
-		handler.processRequest();
+
 	}
-	
-	
+
 }
